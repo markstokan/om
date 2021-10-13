@@ -20,4 +20,5 @@ jobs:
       run: |
         go version
         go get github.com/onsi/ginkgo/ginkgo
-        ginkgo -r -race -p .
+        go mod download
+        ginkgo -r -race -p . --skipPackage=depstability_test

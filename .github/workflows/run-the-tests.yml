@@ -17,4 +17,8 @@ jobs:
       with:
         go-version: ${{ matrix.go }}
     - name: Test
-      run: ginkgo -r -race -p .
+      run: |
+        go version
+        go get github.com/onsi/ginkgo/ginkgo
+        go mod download
+        ginkgo -r -race -p .
